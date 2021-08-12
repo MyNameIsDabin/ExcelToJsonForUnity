@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a31b29fce3bc141b2f97d7d5afff33, type: 3}
   m_Name: ExcelToJsonSettings
   m_EditorClassIdentifier: 
-  ExcelPath: Assets/Editor
+  ExcelPath: asdasw

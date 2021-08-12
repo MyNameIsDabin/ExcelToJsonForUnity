@@ -38,14 +38,22 @@ public class ExcelToJsonEditorWindow : EditorWindow
 
     public static void SaveSettings()
     {
-        var instance = CreateInstance<ExcelToJsonSettings>();
-        AssetDatabase.CreateAsset(instance, EditorSettingFile);
+        if (settings == null)
+        {
+            settings = CreateInstance<ExcelToJsonSettings>();
+            AssetDatabase.CreateAsset(settings, EditorSettingFile);
+        }
+
         AssetDatabase.SaveAssets();
+        EditorUtility.SetDirty(settings);
     }
 
     public static void LoadSettings()
     {
-        if (AssetDatabase.LoadAssetAtPath(EditorSettingFile, typeof(ExcelToJsonSettings)) == null)
+        var instance = AssetDatabase.LoadAssetAtPath(EditorSettingFile, typeof(ExcelToJsonSettings)) as ExcelToJsonSettings;
+        if (instance == null)
             SaveSettings();
+        else
+            settings = instance;
     }
 }
