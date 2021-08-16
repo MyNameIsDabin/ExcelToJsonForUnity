@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,20 +12,20 @@ public class LocalDBEditorWindow : EditorWindow
     public static LocalDBSettings settings;
 
     [MenuItem("LocalDB/데이터 시트(JSON) 다운로드")]
-    static void LoadGoogleSpreadSheet()
+    public static void LoadGoogleSpreadSheet()
     {
         string toolPath = Application.dataPath + @"/ExternalTools/GoogleSpreadSheetToJson/app.js";
         RunNodeScript(toolPath, "gss --json true");
     }
 
     [MenuItem("LocalDB/언어 시트(CSV) 다운로드")]
-    static void LoadGoogleSpreadSheetLanguages()
+    public static void LoadGoogleSpreadSheetLanguages()
     {
         string toolPath = Application.dataPath + @"/ExternalTools/GoogleSpreadSheetToJson/app.js";
         RunNodeScript(toolPath, "gss --csv true");
     }
 
-    static void RunNodeScript(string toolPath, string arguments)
+    public static void RunNodeScript(string toolPath, string arguments)
     {
         Process p = new Process();
         p.StartInfo.CreateNoWindow = false;
