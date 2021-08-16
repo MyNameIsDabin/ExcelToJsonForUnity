@@ -5,6 +5,7 @@ namespace LocalDB
 {
     // Local DB 데이터 클래스를 정의합니다 (Excel 데이터 형식과 동일해야 합니다)
 
+    [Serializable]
     public class DataCharacter : Data<DataCharacter>
     {
         public int id;
@@ -12,6 +13,7 @@ namespace LocalDB
         public int grade;
     }
 
+    [Serializable]
     public class DataMiniGame : Data<DataMiniGame>
     {
         public int id;

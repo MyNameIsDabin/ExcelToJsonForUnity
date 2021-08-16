@@ -11,7 +11,7 @@ namespace LocalDB
         public enum DBName
         {
             None,
-            YourDBName,
+            Characters,
         }
 
         private const string LOCAL_DB_PATH = "LocalDB";
@@ -21,8 +21,10 @@ namespace LocalDB
 
         public void InitLocalDB()
         {
-            //SetDataBaseFromJSON<YourDataType>(DBName.YourDBName, "characters");
+            SetDataBaseFromJSON<DataCharacter>(DBName.Characters, "characters");
 
+            var list = GetDataList<DataCharacter>();
+            list.ForEach(a => Debug.Log(a.ToJson()));
         }
 
         public List<T> GetDataList<T>(DBName dbName = DBName.None)
@@ -43,15 +45,15 @@ namespace LocalDB
 
         public List<T> LoadArrayDataFromJson<T>(string filename)
         {
-            string path = Path.Combine(LOCAL_DB_PATH, filename);
-            TextAsset jsonFile = Resources.Load(path) as TextAsset;
-            string json = jsonFile.text;
+            var path = Path.Combine(LOCAL_DB_PATH, filename);
+            var jsonFile = Resources.Load(path) as TextAsset;
+            var json = jsonFile.text;
             return JsonUtility.FromJson<DataList<T>>("{ \"dataList\": " + json + "}").ToList();
         }
 
         public void SetDataBaseFromJSON<T>(DBName dbName, string filename)
         {
-            List<T> dataList = LoadArrayDataFromJson<T>(filename);
+            var dataList = LoadArrayDataFromJson<T>(filename);
             dbNamesByType.Add(typeof(T), dbName);
             db.Add(dbName, dataList);
         }

@@ -1,18 +1,10 @@
 {
     "1krFuR6aQQU4A_VrT6otJX1GVbSHi-5jRle7An2V5nzk": {
         "characters": {
-            "json" : "./Assets/Resources/LocalDB/characters.json"
+            "json" : "./Assets/LocalDB/Resources/LocalDB/characters.json"
         },
         "miniGames": {
-            "json" : "./Assets/Resources/LocalDB/miniGames.json"
-        }
-    },
-    "1efwD2RH8Hr2tWnewur08cLaIZaCCLdL0jv5bBvYXeQ8": {
-        "Korean": {
-            "csv" : "./Assets/Monofab/CSV Localization/Resources/Localization/Korean/translation.csv"
-        },
-        "English": {
-            "csv" : "./Assets/Monofab/CSV Localization/Resources/Localization/English/translation.csv"
+            "json" : "./Assets/LocalDB/Resources/LocalDB/miniGames.json"
         }
     }
 }
