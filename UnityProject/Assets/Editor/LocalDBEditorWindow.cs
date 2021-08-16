@@ -38,7 +38,7 @@ public class LocalDBEditorWindow : EditorWindow
         p.Start();
     }
 
-    [MenuItem("LocalDB/Settings")]
+    [MenuItem("LocalDB/설정")]
 
     public static void ShowWindow()
     {
@@ -52,9 +52,11 @@ public class LocalDBEditorWindow : EditorWindow
 
     private void OnGUI()
     {
-        GUILayout.Label("Excel Path");
+        // TODO..
 
-        settings.ExcelPath = EditorGUILayout.TextField("Text Field", settings.ExcelPath);
+        //GUILayout.Label("Excel Path");
+
+        //settings.ExcelPath = EditorGUILayout.TextField("Text Field", settings.ExcelPath);
     }
 
     private void OnDestroy()

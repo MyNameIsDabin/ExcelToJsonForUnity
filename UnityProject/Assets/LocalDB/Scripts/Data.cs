@@ -3,6 +3,22 @@ using UnityEngine;
 
 namespace LocalDB
 {
+    // Local DB 데이터 클래스를 정의합니다 (Excel 데이터 형식과 동일해야 합니다)
+
+    public class DataCharacter : Data<DataCharacter>
+    {
+        public int id;
+        public string name;
+        public int grade;
+    }
+
+    public class DataMiniGame : Data<DataMiniGame>
+    {
+        public int id;
+        public string name;
+        public string scene;
+    }
+
     [Serializable]
     public class Data<T>
     {
