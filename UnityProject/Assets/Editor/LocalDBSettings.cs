@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ExcelToJsonSettings : ScriptableObject
+public class LocalDBSettings : ScriptableObject
 {
     public string ExcelPath = "Assets/Editor";
 }
